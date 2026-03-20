@@ -1,0 +1,37 @@
+async function updatePrices() {
+    const tableBody = document.getElementById('price-table');
+    const status = document.getElementById('status');
+    
+    try {
+         SimcoTools API'sine istek atıyoruz
+        const response = await fetch(httpsapi.simcotools.comv1realms0marketprices);
+        const data = await response.json();
+
+         Tabloyu temizle
+        tableBody.innerHTML = ;
+
+         Veriyi işle (Örn İlk 20 ürünü göster)
+        data.slice(0, 20).forEach(item = {
+            const row = `
+                tr class=border-b border-slate-700 hoverbg-slate-700 transition
+                    td class=p-3 font-medium${item.name}td
+                    td class=p-3 text-green-400$${item.price.toLocaleString()}td
+                    td class=p-3 text-slate-400${item.quantity.toLocaleString()}td
+                tr
+            `;
+            tableBody.insertAdjacentHTML('beforeend', row);
+        });
+
+        status.innerText = Son Güncelleme  + new Date().toLocaleTimeString();
+
+    } catch (error) {
+        status.innerText = Hata Veri çekilemedi.;
+        console.error(API Hatası, error);
+    }
+}
+
+ İlk çalıştırma
+updatePrices();
+
+ Her 2 dakikada bir otomatik yenile
+setInterval(updatePrices, 120000);
