@@ -3,28 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SimCo Anlık Fiyat Botu</title>
-    <script src="https://cdn.tailwindcss.com"></script> </head>
-<body class="bg-slate-900 text-white p-8">
-    <div class="max-w-2xl mx-auto">
-        <h1 class="text-2xl font-bold mb-4 border-b border-slate-700 pb-2">SimCo Market Botu</h1>
-        <div id="status" class="text-sm text-blue-400 mb-4">Veriler güncelleniyor...</div>
-        
-        <div class="overflow-hidden rounded-lg border border-slate-700">
-            <table class="w-full text-left bg-slate-800">
-                <thead class="bg-slate-700">
-                    <tr>
-                        <th class="p-3">Ürün</th>
-                        <th class="p-3">Fiyat ($)</th>
-                        <th class="p-3">Miktar</th>
-                    </tr>
-                </thead>
-                <tbody id="price-table">
-                    </tbody>
-            </table>
-        </div>
+    <title>Anlık Fiyat Takibi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white dark:bg-zinc-950 flex items-center justify-center h-screen">
+    <div class="text-center">
+        <div id="status" class="text-[10px] uppercase tracking-widest text-zinc-400 mb-2">Canlı Veri</div>
+        <span id="price-display" class="text-6xl md:text-8xl font-black text-zinc-900 dark:text-zinc-50 tracking-tighter">
+            ...
+        </span>
     </div>
-
     <script src="app.js"></script>
 </body>
 </html>
